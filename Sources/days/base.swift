@@ -6,8 +6,8 @@ protocol AdventDay {
     var data: String { get }
     var dataLines: [String] { get}
 
-    func solveDay1() -> Any
-    func solveDay2() -> Any
+    func part1() -> Any
+    func part2() -> Any
 }
 
 extension AdventDay {

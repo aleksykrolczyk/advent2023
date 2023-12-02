@@ -12,15 +12,15 @@ let numbers = [
 ]
 
 class Day01: AdventDay  {
-        
-    func solveDay1() -> Any {
+
+    func part1() -> Any {
         let sol = dataLines
             .map { 10 * ($0.firstDigit()?.0 ?? 0) + ($0.lastDigit()?.0 ?? 0)}
             .reduce(0, +)
         return sol
     }
 
-    func solveDay2() -> Any {
+    func part2() -> Any {
         var sum = 0
 
         for line in dataLines {
