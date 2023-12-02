@@ -1,21 +1,28 @@
 import Foundation
 
 protocol AdventDay {
-    var dayNumber: String { get }
-    func readInput() -> String
-    func getInputLines() -> [String]
+
+    static var day: String { get }
+    var data: String { get }
+    var dataLines: [String] { get}
 
     func solveDay1() -> Any
     func solveDay2() -> Any
 }
 
 extension AdventDay {
-    func readInput() -> String {
-        return try! String(contentsOfFile: "./Sources/InputData/day\(dayNumber).txt")
+
+    var data: String {
+        return try! String(contentsOfFile: "./Sources/Data/day\(Self.day).txt")
     }
 
-    func getInputLines() -> [String] {
-        return readInput().components(separatedBy: "\n")
+    var dataLines: [String] {
+        data.components(separatedBy: "\n")
+    }
+
+    static var day: String {
+        let name = String(describing: type(of: self))
+        return name.filter{ $0.isWholeNumber }
     }
 
 }

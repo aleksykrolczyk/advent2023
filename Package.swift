@@ -11,7 +11,7 @@ let package = Package(
         .executableTarget(
             name: "advent2023",
             path: "Sources",
-            resources: [.copy("InputData")]
+            resources: [.copy("Data")]
         ),
     ]
 )

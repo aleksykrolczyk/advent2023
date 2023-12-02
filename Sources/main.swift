@@ -1,7 +1,7 @@
 // The Swift Programming Language
 // https://docs.swift.org/swift-book
 
-let day: AdventDay = Day1()
+let day: AdventDay = Day01()
 
 print("=======  Day 1 solution  =======")
 print(day.solveDay1())

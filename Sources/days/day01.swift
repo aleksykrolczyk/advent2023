@@ -11,18 +11,10 @@ let numbers = [
     "nine": 9
 ]
 
-class Day1: AdventDay  {
-    var dayNumber: String = "01"
-    var lines: [String]
-
-    init() {
-        // TODO
-        lines = []
-        lines = getInputLines()
-    }
-
+class Day01: AdventDay  {
+        
     func solveDay1() -> Any {
-        let sol = lines
+        let sol = dataLines
             .map { 10 * ($0.firstDigit()?.0 ?? 0) + ($0.lastDigit()?.0 ?? 0)}
             .reduce(0, +)
         return sol
@@ -31,7 +23,7 @@ class Day1: AdventDay  {
     func solveDay2() -> Any {
         var sum = 0
 
-        for line in lines {
+        for line in dataLines {
             if line.isEmpty { continue }
             var (firstDigit, firstDigitIndex) = line.firstDigit() ?? (-1, Int.max)
             var (lastDigit, lastDigitIndex) = line.lastDigit() ?? (-1, Int.min)
