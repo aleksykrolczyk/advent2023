@@ -1,6 +1,7 @@
 import CoreFoundation
 
 
+
 let day: AdventDay = Day05()
 
 let start1 = CFAbsoluteTimeGetCurrent()

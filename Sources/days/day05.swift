@@ -50,15 +50,23 @@ class Day05: AdventDay {
     }
 
     func part2() -> Any {
+        // It's stupid but I have work to do so this can process in background while I'm busy :))
+        // EDIT: took 6 minutes only with release build!
+
         var seedRanges: [ClosedRange<Int>] = []
         for i in 0 ..< seeds.count / 2 {
             let start = seeds[2*i]
             let length = seeds[2*i + 1]
             seedRanges.append(start ... start + length - 1)
         }
-
-        // TODO
         
-        return ""
+        var minDest = Int.max
+        for range in seedRanges {
+            for seed in range {
+                let destination = findDestination(seed: seed)
+                minDest = min(destination, minDest)
+            }
+        }
+        return minDest
     }
 }
