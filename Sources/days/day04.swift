@@ -1,5 +1,5 @@
 class Day04: AdventDay {
-    let cards: [Card]
+    fileprivate let cards: [Card]
 
     init() {
         self.cards = Self.dataLines.map { line in 
@@ -33,7 +33,7 @@ class Day04: AdventDay {
     }
 }
 
-struct Card: Hashable {
+fileprivate struct Card: Hashable {
     let winningNumers: Set<Int>
     let numbers: Set<Int>
 

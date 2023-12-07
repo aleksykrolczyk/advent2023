@@ -1,4 +1,4 @@
-enum Cube {
+fileprivate enum Cube {
   case red, green, blue
   var limit: Int {
     switch self {

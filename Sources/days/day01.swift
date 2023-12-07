@@ -52,8 +52,8 @@ class Day01: AdventDay {
   }
 }
 
-extension String {
-  fileprivate func firstDigit() -> (Int, Int)? {
+fileprivate extension String {
+  func firstDigit() -> (Int, Int)? {
     for (i, character) in self.enumerated() {
       if let v = character.wholeNumberValue {
         return (v, i)
@@ -62,7 +62,7 @@ extension String {
     return nil
   }
 
-  fileprivate func lastDigit() -> (Int, Int)? {
+  func lastDigit() -> (Int, Int)? {
     for (i, character) in self.reversed().enumerated() {
       if let v = character.wholeNumberValue {
         return (v, self.count - i - 1)
