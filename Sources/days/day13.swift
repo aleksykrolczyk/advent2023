@@ -84,15 +84,6 @@ private struct Map {
     }
     return Map(tiles: newTiles)
   }
-
-  func copy(swapAt pos: (row: Int, col: Int)?) -> Map {
-    var t = tiles
-    if let pos {
-      t[pos.row][pos.col] = t[pos.row][pos.col].opposite()
-    }
-    return Map(tiles: t)
-  }
-
 }
 
 private enum Tile: CustomStringConvertible {
